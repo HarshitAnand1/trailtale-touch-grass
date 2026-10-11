@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Trailtale — an audio story that plays only while you walk, plus weekly nature quests. No cloud, no account, works offline."
+    />
+    <meta name="theme-color" content="#2d6a4f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Trailtale</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="title-group">
+          <h1 class="logo-text">Trailtale</h1>
+        </div>
+      </header>
+
+      <!-- ═══ Home Screen ═══ -->
+      <div class="screen active" id="screen-home">
+        <div class="hero-section">
+          <div class="hero-scene" aria-hidden="true">
+            <div class="scene-swirls"></div>
+            <div class="scene-leaf scene-leaf-a"></div>
+            <div class="scene-leaf scene-leaf-b"></div>
+            <div class="scene-leaf scene-leaf-c"></div>
+            <div class="scene-blob"></div>
+            <div class="scene-vine scene-vine-a"></div>
+            <div class="scene-vine scene-vine-b"></div>
+          </div>
+
+          <div class="hero-text">
+            <h1>Walk into a story</h1>
+            <p>
+              One tap to start. The story plays while you move and pauses when
+              you stop. Phone stays in your pocket.
+            </p>
+          </div>
+
+          <div class="genre-selector" id="genre-selector">
+            <button class="genre-btn selected" data-genre="mystery">
+              Mystery
+            </button>
+            <button class="genre-btn" data-genre="adventure">Adventure</button>
+            <button class="genre-btn" data-genre="folklore">Folklore</button>
+            <button class="genre-btn" data-genre="nature">Nature</button>
+          </div>
+
+          <button class="btn-start" id="btn-start">Start Walk</button>
+        </div>
+      </div>
+
+      <!-- ═══ Walk Screen ═══ -->
+      <div class="screen" id="screen-walk">
+        <!-- Status bar -->
+        <div class="walk-status-bar">
+          <div class="walk-state">
+            <div class="walk-state-indicator" id="walk-state-dot"></div>
+            <span class="walk-state-label" id="walk-state-label">Waiting…</span>
+          </div>
+          <div class="walk-timer" id="walk-timer">00:00</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="walk-stats">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-distance">0</div>
+            <div class="stat-label">Metres</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-segments">0</div>
+            <div class="stat-label">Segments</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-quests">0</div>
+            <div class="stat-label">Finds</div>
+          </div>
+        </div>
+
+        <!-- Now playing -->
+        <div class="now-playing" id="now-playing">
+          <div class="now-playing-label">Now playing</div>
+          <div class="now-playing-text" id="now-playing-text">
+            Start walking to hear your story…
+          </div>
+          <div class="now-playing-segment" id="now-playing-segment"></div>
+          <div class="sound-wave paused" id="sound-wave">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+
+        <!-- Quests during walk -->
+        <div class="walk-quests" id="walk-quests"></div>
+
+        <!-- End button -->
+        <button class="btn-end-walk" id="btn-end-walk">End Walk</button>
+      </div>
+
+      <!-- ═══ Walk Log Screen ═══ -->
+      <div class="screen" id="screen-log">
+        <div class="log-card">
+          <h2>🗺️ Walk Complete</h2>
+          <div class="log-stats-grid" id="log-stats"></div>
+          <div class="log-story-title" id="log-story-title"></div>
+        </div>
+
+        <div class="log-card">
+          <h2>🔍 Quests Found</h2>
+          <ul class="log-quests-list" id="log-quests-list"></ul>
+        </div>
+
+        <button class="btn-new-walk" id="btn-new-walk">
+          Start Another Walk
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loading">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Hidden photo capture -->
+    <input
+      type="file"
+      id="photo-capture"
+      accept="image/*"
+      capture="environment"
+    />
+
+    <!-- Scripts -->
+    <script src="/walk-gate.js"></script>
+    <script src="/audio-queue.js"></script>
+    <script src="/quest-ui.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

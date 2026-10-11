@@ -1,0 +1,60 @@
+{
+  "region": "himalayan-foothills",
+  "version": "2026-10",
+  "quests": [
+    {
+      "id": "q-leaf-color",
+      "title": "Find three trees changing color",
+      "target": "leaf",
+      "count": 3,
+      "starts": "2026-10-05",
+      "expires": "2026-10-25",
+      "hint": "Look for yellow or red edges on broad leaves."
+    },
+    {
+      "id": "q-moss-rock",
+      "title": "Spot a moss-covered rock",
+      "target": "moss",
+      "count": 1,
+      "starts": "2026-10-01",
+      "expires": "2026-10-31",
+      "hint": "Check the shaded side of large boulders near water."
+    },
+    {
+      "id": "q-bird-call",
+      "title": "Hear two different bird calls",
+      "target": "bird",
+      "count": 2,
+      "starts": "2026-10-05",
+      "expires": "2026-10-19",
+      "hint": "Stand still for thirty seconds near a clearing."
+    },
+    {
+      "id": "q-wildflower",
+      "title": "Find a wildflower still blooming",
+      "target": "flower",
+      "count": 1,
+      "starts": "2026-10-01",
+      "expires": "2026-10-15",
+      "hint": "Late-season flowers hide near sun-warmed walls and south-facing slopes."
+    },
+    {
+      "id": "q-mushroom",
+      "title": "Spot a mushroom on a fallen log",
+      "target": "mushroom",
+      "count": 1,
+      "starts": "2026-10-10",
+      "expires": "2026-10-31",
+      "hint": "Damp rotting wood under tree cover is the best place to look."
+    },
+    {
+      "id": "q-spider-web",
+      "title": "Find a spider web with dew on it",
+      "target": "spider web",
+      "count": 1,
+      "starts": "2026-10-05",
+      "expires": "2026-10-20",
+      "hint": "Early morning is best. Check between low branches or fence posts."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Trailtale",
+  "short_name": "Trailtale",
+  "description": "An audio story that plays only while you walk, plus weekly nature quests.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1a12",
+  "theme_color": "#2d6a4f",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
